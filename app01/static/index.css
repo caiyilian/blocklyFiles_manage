@@ -1,0 +1,153 @@
+*{
+    /* 去除浏览器的默认样式 */
+	margin:0px;
+	padding: 0px;
+    list-style-type: none;
+}
+/* 顶层区域 */
+.header{
+    background-color: #efefef;
+    width: 100%;
+    height: 30px;
+
+}
+.title{
+    height: 100%;
+    text-align: center;
+    line-height: 100%;
+    font-size: 25px;
+}
+
+/* 中层区域 */
+.middle{
+    margin-top: 80px;
+    height: 550px;
+}
+/* 中层区域->展示区域 */
+.show{
+    position: relative;
+    border: 1px red solid;
+    border-radius: 2%;
+    height: 95%;
+    width: 60%;
+    margin: auto;
+    top: 2.5%;
+
+}
+
+.showData{
+    position: relative;
+    top: 2.5%;
+    margin: auto;
+    border: 1px black solid;
+
+    width: 95%;
+    height: 80%;
+    overflow: scroll;
+}
+.obj{
+    margin: 10px 1%;
+    height: 12%;
+    border: 1px rgb(174, 168, 168) solid;
+    font-size: 20px;
+
+}
+.showData .obj:hover{
+    cursor: pointer;
+}
+.showData .title{
+    /* 设置行头字段的容器的样式 */
+    font-size: 20px;
+    height: 10%;
+    margin: 1px 1%;
+    background-color: rgb(233, 227, 227);
+}
+.showData .title div{
+    /* 给行头字段设置样式 */
+    display:inline-block;
+    line-height: 40px;
+    text-align: center;
+    color: red;
+    width: 24%;
+    height: 100%;
+}
+.obj div{
+    /* 给行头字段设置样式 */
+    display:inline-block;
+    line-height: 40px;
+    text-align: center;
+    width: 24%;
+    height: 100%;
+}
+.obj .desc{
+    /* 如果描述太多，加个省略号 */
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+}
+.obj .version,
+.obj .createDate,
+.obj .creator{
+    top: -34%;
+    position: relative;
+    line-height: 50px;
+}
+.title div:nth-child(1),
+.title div:nth-child(2),
+.title div:nth-child(3){
+    /* 给行头字段之间加上分界线 */
+    border-right: 1px #ccc solid;
+}
+
+/* 中层区域->按钮区域 */
+.buttons{
+    margin-top: 2%;
+    height: 15%;
+    width: 100%;
+}
+.buttons button{
+    color: red;
+    margin: 2% 2%;
+    width: 20%;
+    height: 50%;
+    border: #8d8a8a 1px solid;
+    border-radius: 20px;
+    font-size: 20px;
+}
+/* .buttons button:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+.buttons button:active{
+    background-color: rgb(189, 187, 187);
+} */
+/* 上传的输入框 */
+.uploadContainer{
+    margin-top: -30%;
+    margin-left: 37.5%;
+    position: fixed;
+    width: 25%;
+    height: 200px;
+    border: 1px rgb(162, 155, 155) solid;
+    display: none;
+    flex-direction: column;
+    border-radius: 2%;
+    background-color: #efefef;
+}
+.uploadContainer div{
+    margin: auto auto;
+}
+.uploadButtons{
+    display: flex;
+    flex-direction: row;
+
+}
+.uploadButtons button{
+    margin: 0 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10%;
+    border: 1px #cac6c6 solid;
+    color: white;
+}

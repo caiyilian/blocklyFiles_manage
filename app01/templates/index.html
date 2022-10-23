@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编程块管理系统</title>
+    <link rel="stylesheet" type="text/css" href={% static "index.css" %}>
+    <script type="text/javascript" src={% static "index.js" %}></script>
+    <script>
+        function func(e){
+            {#event.preventDefault();#}
+            console.log("sss")
+            return false
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="title">编程块管理</div>
+</div>
+
+<div class="middle">
+    <div class="show">
+        <ul class="showData">
+            <!-- 展示区域 -->
+            <div class="title">
+                <div class="version">版本号</div>
+                <div class="desc">描述</div>
+                <div class="createDate">创建日期</div>
+                <div class="creator">创建人</div>
+            </div>
+        </ul>
+        <div class="buttons">
+            <button>上传</button>
+            <button>删除</button>
+            <button>获取</button>
+            <button>下载</button>
+            <!-- 按钮区域 -->
+        </div>
+    </div>
+</div>
+<div id="variables" hidden="false">
+    <div id="csrf_token">
+        {{ csrf_token }}
+    </div>
+    <div id="token">
+        {{ token }}
+    </div>
+    <div id="upLoadSuccess">
+        {{ upLoadSuccess }}
+    </div>
+</div>
+<div class="uploadContainer">
+    <br>
+    <div>
+        版本: <input id="version" type="text" name="version">
+    </div>
+    <div>
+        描述: <input id="desc" type="text" name="desc">
+
+    </div>
+    <div>
+        编程块:
+        <button id="chooseButton">选择文件</button>
+        <form enctype="multipart/form-data" action="/index/" method="post" style="display: none;">
+            {% csrf_token %}
+            <input id="trueVersion" type="text" name="version">
+            <input id="trueDesc" type="text" name="desc">
+            <input value="{{ token }}" type="text" name="token">
+            <input accept=".7z" id="trueFile" type="file" name="blockfile">
+            <br/>
+            <input id="submit" type="submit" value="上传文件">
+        </form>
+    </div>
+    <div class="uploadButtons">
+        <button id="upload" style="background-color: green;">上传</button>
+        <button id="cancel" style="background-color: red;">取消</button>
+    </div>
+
+</div>
+</body>
+</html>
